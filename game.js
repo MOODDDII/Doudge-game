@@ -26,6 +26,10 @@ const gameLoop = () => {
     playerPosition += 0.5;
   }
 
+  if (playerPosition < 0 || playerPosition > 100) {
+    gameOver();
+  }
+
   player.style.left = `${playerPosition}%`;
 
   requestAnimationFrame(gameLoop);
