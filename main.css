@@ -1,0 +1,51 @@
+:root {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.game-field {
+  position: relative;
+  background-image: url('./images/space.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.player {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url('./images/space-ship.png');
+  background-position: center;
+  background-size: cover;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #00000019;
+}
+
+.obstacle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('./images/asteroid-texture.jpg');
+  border-radius: 50%;
+}
+
+.loose {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000;
+  color: #ff0000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
