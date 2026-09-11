@@ -5,6 +5,7 @@ const banner = document.querySelector('.loose');
 let playerPosition = 50;
 let gamepadIndex = null;
 let restartPressed = false;
+let score = 0;
 
 // gamepad events
 window.addEventListener("gamepadconnected", (e) => {
@@ -20,9 +21,16 @@ window.addEventListener("gamepaddisconnected", (e) => {
 // game over function
 const gameOver = () => {
   clearInterval(spawnInterval);
+  clearInterval(scoreInterval);
+
   document.removeEventListener("keydown", handleKeyDown);
+
   banner.style.display = 'flex';
   gameField.style.display = 'none';
+
+  const scoreNumber = document.createElement('p');
+  scoreNumber.textContent = `Your score is: ${score}`;
+  banner.appendChild(scoreNumber);
 };
 
 const handleKeyDown = (e) => {
@@ -137,5 +145,11 @@ const keys = {
 
 document.addEventListener("keydown", (e) => keys[e.key] = true);
 document.addEventListener("keyup", (e) => keys[e.key] = false);
+
+// start counting score
+const scoreInterval = setInterval(() => {
+  score++;
+  console.log(score);
+}, 1000);
 
 gameLoop();
