@@ -31,6 +31,10 @@ const gameOver = () => {
   const scoreNumber = document.createElement('p');
   scoreNumber.textContent = `Your score is: ${score}`;
   banner.appendChild(scoreNumber);
+
+  const bestScoreNumber = document.createElement('p');
+  bestScoreNumber.textContent = `Your score is: ${scoreRecord(score)}`;
+  banner.appendChild(bestScoreNumber);
 };
 
 const handleKeyDown = (e) => {
@@ -149,7 +153,18 @@ document.addEventListener("keyup", (e) => keys[e.key] = false);
 // start counting score
 const scoreInterval = setInterval(() => {
   score++;
-  console.log(score);
 }, 1000);
+
+// best score checking function
+const scoreRecord = (score) => {
+  const bestScore = Number(localStorage.getItem('bestScore')) || 0;
+
+  if (score > bestScore) {
+    localStorage.setItem('bestScore', score);
+    return score;
+  }
+
+  return bestScore;
+};
 
 gameLoop();
