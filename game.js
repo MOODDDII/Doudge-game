@@ -33,7 +33,7 @@ const gameOver = () => {
   banner.appendChild(scoreNumber);
 
   const bestScoreNumber = document.createElement('p');
-  bestScoreNumber.textContent = `Your score is: ${scoreRecord(score)}`;
+  bestScoreNumber.textContent = `Your best score is: ${scoreRecord(score)}`;
   banner.appendChild(bestScoreNumber);
 };
 
