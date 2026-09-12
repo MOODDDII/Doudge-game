@@ -1,5 +1,5 @@
 import { updatePlayer, playerPosition } from './player.js';
-import { spawnObstacle, updateObstacles, obstacles } from './obstacles';
+import { spawnObstacle, updateObstacles, obstacles } from './obstacles.js';
 import { gameOver } from './gameOver.js';
 
 const player = document.querySelector(".player");
