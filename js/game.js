@@ -1,6 +1,7 @@
 import { updatePlayer, playerPosition } from './player.js';
 import { spawnObstacle, updateObstacles, obstacles } from './obstacles.js';
 import { gameOver } from './gameOver.js';
+import { gamepadIndex } from './input.js';
 
 const player = document.querySelector(".player");
 const gameField = document.querySelector(".game-field");
@@ -36,7 +37,7 @@ function gameLoop(timestamp) {
 
   // Spawn
   spawnTimer += deltaTime;
-  if (spawnTimer > 300) {
+  if (spawnTimer > 150) {
     spawnObstacle(gameField);
     spawnTimer = 0;
   }
@@ -50,5 +51,19 @@ function gameLoop(timestamp) {
 
   requestAnimationFrame(gameLoop);
 }
+
+function restartLoop() {
+  if (gamepadIndex !== null) {
+    const gp = navigator.getGamepads()[gamepadIndex];
+
+    if (gp && gp.buttons[0]?.pressed) {
+      location.reload();
+    }
+  }
+
+  requestAnimationFrame(restartLoop);
+}
+
+restartLoop();
 
 requestAnimationFrame(gameLoop);
