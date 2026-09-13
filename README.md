@@ -1,6 +1,7 @@
 # Dodge Game 🎮
 
-A fast-paced browser-based dodge game built with vanilla JavaScript, HTML5, and CSS3. Move your player left and right to avoid falling obstacles for as long as possible.
+A fast-paced browser-based dodge game built with vanilla JavaScript, HTML5, and CSS3.  
+Control your spaceship and avoid falling asteroids for as long as possible.
 
 ## 🕹️ Live Demo
 
@@ -8,21 +9,24 @@ A fast-paced browser-based dodge game built with vanilla JavaScript, HTML5, and 
 
 ## 🎯 How to Play
 
-- Use **← →** arrow keys to move the player
+- Use **← →** arrow keys or **A / D** to move
+- Supports **gamepad** (left stick + D-pad)
 - Avoid falling obstacles
 - One hit — game over
-- Press **F5** to restart
+- Press **F5** or the gamepad button to restart
 
-## ⚙️ How It Works
+## ✨ Features
 
-- Obstacles spawn every 100ms at a random horizontal position and fall down the screen
-- Player movement is handled via `requestAnimationFrame` for smooth 60fps motion
-- Collision detection uses `getBoundingClientRect()` to compare player and obstacle positions in real time
-- On collision — intervals are cleared, event listeners removed, and the game over screen is shown
+- Smooth movement with `requestAnimationFrame`
+- Adaptive speed using `deltaTime`
+- Collision detection
+- Score system with localStorage high score
+- Gamepad support
+- Responsive design
 
 ## 🛠️ Tech Stack
 
-- Vanilla JavaScript (ES6+)
+- Vanilla JavaScript (ES6 Modules)
 - HTML5
 - CSS3
 
@@ -31,14 +35,3 @@ A fast-paced browser-based dodge game built with vanilla JavaScript, HTML5, and 
 ```bash
 git clone https://github.com/MOODDDII/Doudge-game
 cd Doudge-game
-# Open index.html in your browser
-```
-
-## 📁 Project Structure
-
-```
-Doudge-game/
-├── index.html
-├── game.js
-└── main.css
-```
