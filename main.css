@@ -46,7 +46,9 @@
 .loose {
   width: 100dvw;
   height: 100dvh;
-  background-color: #000;
+  background-image: url('./images/space.jpg');
+  background-position: center;
+  background-size: cover;
   color: #ae00ff;
   display: none;
   justify-content: center;
@@ -66,8 +68,10 @@
 
 .loose h1 {
   font-size: 160px;
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5), 7px 5px 1px rgba(0,60,206,0.68);
 }
 
 .loose p {
   font-size: 40px;
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5), 7px 5px 1px rgba(0,60,206,0.68);
 }
