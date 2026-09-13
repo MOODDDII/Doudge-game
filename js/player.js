@@ -4,7 +4,7 @@ export let playerPosition = 50;
 let restartPressed = false;
 
 export function updatePlayer(deltaTime, playerEl) {
-  const playerSpeed = 0.05 * deltaTime;
+  const playerSpeed = 0.06 * deltaTime;
 
   if (keys.ArrowLeft || keys.a) {
     playerPosition -= playerSpeed;

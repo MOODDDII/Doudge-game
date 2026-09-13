@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 :root {
   overflow: hidden;
 }
@@ -22,7 +24,6 @@
   width: 8vmin;
   height: 8vmin;
   background-image: url('./images/space-ship.png');
-  background-position: center;
   background-size: cover;
   bottom: 10%;
   left: 50%;
@@ -36,6 +37,9 @@
   width: 10vmin;
   height: 10vmin;
   background-image: url('./images/asteroid-texture.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 50%;
 }
 
@@ -43,10 +47,27 @@
   width: 100dvw;
   height: 100dvh;
   background-color: #000;
-  color: #ff0000;
+  color: #ae00ff;
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 8px;
+
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.loose::selection {
+  background-color: none;
+  color: none;
+}
+
+.loose h1 {
+  font-size: 160px;
+}
+
+.loose p {
+  font-size: 40px;
 }
