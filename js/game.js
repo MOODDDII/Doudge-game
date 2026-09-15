@@ -6,6 +6,7 @@ import { gamepadIndex } from './input.js';
 const player = document.querySelector(".player");
 const gameField = document.querySelector(".game-field");
 const banner = document.querySelector(".loose");
+const scoreValue = document.querySelector(".score-value");
 
 let score = 0;
 let isGameOver = false;
@@ -47,6 +48,7 @@ function gameLoop(timestamp) {
   if (scoreTimer > 1000) {
     score++;
     scoreTimer = 0;
+    scoreValue.textContent = score;
   }
 
   requestAnimationFrame(gameLoop);
